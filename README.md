@@ -23,3 +23,15 @@ those are the packages I installed on OpenBSD for getting this work on a fresh i
  * git
  * cmake
  * qt5 (beware, this is a meta package, that pulls a lot of dependencies)
+
+### "installation"
+ 
+ For it to be used at the login screen of xdm or xenodm, it needs tp be called from the startup scripts of them.
+ If you want to play with it yourself under OpenBSD, your can modify /etc/X11/xenodm/Xsetup_0 to contain the following lines
+ 
+ ```
+ /path/to/login_bar &
+ echo $! > /var/run/login_bar.pid
+ ```
+ 
+ this will start login_bar and create a pid file, so you can kill the toolbar from a script, once you logged in
