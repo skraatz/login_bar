@@ -1,3 +1,20 @@
 simple toolbar, providing a clock widget as well as reboot and shutdown buttons, intended to be used with xdm/xenodm
 
 ![alt text](https://raw.githubusercontent.com/skraatz/login_bar/master/screenshot.png)
+
+### this toolbar is build using cmake
+
+ * clone the repo
+ * cd login_bar
+ * mkdir build && cd build
+ 
+ // this next  step is probably specific to OpenBSD, where I wrote it
+ // under Linux your QT libraries are likely somewhere else
+ * export Qt5Widgets_DIR=/usr/local/lib/qt5/cmake/Qt5Widgets/ 
+ * cmake ..
+ * make
+
+### requirements
+
+I have not tested for all requirements, but this requires at least some version
+of the qt5 libraries installed
