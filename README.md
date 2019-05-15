@@ -1,4 +1,4 @@
-simple toolbar, providing a clock widget as well as reboot and shutdown buttons, intended to be used with xdm/xenodm
+simple toolbar, implemented in QT5, providing a clock widget as well as reboot and shutdown buttons, intended to be used with xdm/xenodm
 
 ![alt text](https://raw.githubusercontent.com/skraatz/login_bar/master/screenshot.png)
 
@@ -18,3 +18,8 @@ simple toolbar, providing a clock widget as well as reboot and shutdown buttons,
 
 I have not tested for all requirements, but this requires at least some version
 of the qt5 libraries installed
+
+those are the packages I installed on OpenBSD for getting this work on a fresh installation
+ * git
+ * cmake
+ * qt5 (beware, this is a meta package, that pulls a lot of dependencies)
