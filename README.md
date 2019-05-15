@@ -5,15 +5,14 @@ simple toolbar, implemented in QT5, providing a clock widget as well as reboot a
 ### this toolbar is build using cmake
 
  * clone the repo
- * cd login_bar
- * mkdir build && cd build
+ * ```cd login_bar```
+ * ```mkdir build && cd build```
  
- // this next  step is probably specific to OpenBSD, where I wrote it
+ // This next  step is probably specific to OpenBSD, where I wrote it. Under Linux your QT libraries are likely somewhere else
  
- // under Linux your QT libraries are likely somewhere else
- * export Qt5Widgets_DIR=/usr/local/lib/qt5/cmake/Qt5Widgets/ 
- * cmake ..
- * make
+ * ```export Qt5Widgets_DIR=/usr/local/lib/qt5/cmake/Qt5Widgets/ ```
+ * ```cmake ..```
+ * ```make```
 
 ### requirements
 
