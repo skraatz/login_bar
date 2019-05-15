@@ -9,6 +9,7 @@ simple toolbar, implemented in QT5, providing a clock widget as well as reboot a
  * mkdir build && cd build
  
  // this next  step is probably specific to OpenBSD, where I wrote it
+ 
  // under Linux your QT libraries are likely somewhere else
  * export Qt5Widgets_DIR=/usr/local/lib/qt5/cmake/Qt5Widgets/ 
  * cmake ..
