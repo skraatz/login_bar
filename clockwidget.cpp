@@ -5,7 +5,7 @@
 
 ClockWidget::ClockWidget(QWidget *parent) : QLCDNumber(parent)
 {
-    setSegmentStyle(Filled);
+    setSegmentStyle(Flat);
 
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &ClockWidget::showTime);

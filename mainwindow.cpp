@@ -20,19 +20,20 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     height = screenGeometry.height();
     width = screenGeometry.width();
 
-    std::cout << QIcon::themeName().toUtf8().constData() << std::endl;
     QIcon::setThemeName("Paper");
-    //QIcon::setFallbackThemeName("Adwaita");
-
 
     // reboot button
-    const QIcon rebootIcon = QIcon::fromTheme("system-reboot");
+    QPixmap fallback_reboot_pixmap("_ionicons_svg_md-refresh-circle.svg");
+    QIcon fallback_reboot_icon(fallback_reboot_pixmap);
+    const QIcon rebootIcon = QIcon::fromTheme("system-reboot", fallback_reboot_icon);
     QAction *rebootAct = new QAction(rebootIcon, tr("&Reboot..."), this);
     rebootAct->setStatusTip(tr("reboot this computer"));
     connect(rebootAct, &QAction::triggered, this, &MainWindow::reboot);
 
     // shutdown button
-    const QIcon shutdownIcon = QIcon::fromTheme("system-shutdown");
+    QPixmap fallback_shutdown_pixmap("icons/_ionicons_svg_md-power.svg");
+    QIcon fallback_shutdown_icon(fallback_shutdown_pixmap);
+    const QIcon shutdownIcon = QIcon::fromTheme("system-shutdown", fallback_shutdown_icon);
     QAction *shutdownAct = new QAction(shutdownIcon, tr("&Shutdown..."), this);
     shutdownAct->setStatusTip(tr("shutdown this computer"));
     connect(shutdownAct, &QAction::triggered, this, &MainWindow::shutdown);
@@ -42,6 +43,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     toolBar = addToolBar(tr("System"));
     toolBar->setFloatable(false);
     toolBar->setMovable(false);
+    //toolBar->setStyleSheet("background-color:teal;");
     
     // spacer
     QWidget* spacer = new QWidget();
