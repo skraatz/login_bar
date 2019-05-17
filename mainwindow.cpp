@@ -20,6 +20,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     height = screenGeometry.height();
     width = screenGeometry.width();
 
+    std::cout << QIcon::themeName().toUtf8().constData() << std::endl;
+    QIcon::setThemeName("Paper");
+    //QIcon::setFallbackThemeName("Adwaita");
+
+
     // reboot button
     const QIcon rebootIcon = QIcon::fromTheme("system-reboot");
     QAction *rebootAct = new QAction(rebootIcon, tr("&Reboot..."), this);
